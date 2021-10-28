@@ -15,6 +15,17 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->default(0);
+            $table->bigInteger('site_id')->default(0);
+            $table->string('slug')->unique();
+            $table->string('status')->default('published');
+            $table->boolean('is_password_protected')->default(0);
+            $table->string('password')->nullable()->default(null);
+            $table->string('title');
+            $table->text('description')->nullable()->default('');
+            $table->string('short_description')->nullable()->default(null);
+            $table->string('featured_image')->nullable()->default(null);
+            $table->bigInteger('tag_id')->default(0);
             $table->timestamps();
         });
     }
