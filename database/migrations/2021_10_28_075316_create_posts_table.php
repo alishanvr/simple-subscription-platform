@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->boolean('is_password_protected')->default(0);
             $table->string('password')->nullable()->default(null);
             $table->string('title');
-            $table->text('description')->nullable()->default('');
+            $table->text('description')->nullable();
             $table->string('short_description')->nullable()->default(null);
             $table->string('featured_image')->nullable()->default(null);
             $table->bigInteger('tag_id')->default(0);

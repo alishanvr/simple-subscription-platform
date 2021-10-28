@@ -16,8 +16,8 @@ class CreateSubscribersTable extends Migration
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
-            $table->string('First Name')->nullable()->default(null);
-            $table->string('Last Name')->nullable()->default(null);
+            $table->string('first_name')->nullable()->default(null);
+            $table->string('last_name')->nullable()->default(null);
             $table->timestamps();
         });
     }
